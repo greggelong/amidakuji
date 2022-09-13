@@ -1,12 +1,28 @@
+import random
+import pprint
 
+
+
+
+cols = 5
+rows = 16
 # grid is y by x grid[y][x]  #last row blank
 grid = [
-    [0,0,1,1,0],
-    [1,1,0,0,0],
-    [0,0,1,1,0],
-    [1,1,0,0,0],
-    [0,0,0,1,1],
-    [1,1,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
     [0,0,0,0,0],
     
     ]
@@ -19,6 +35,22 @@ carol = 2
 david = 3
 ed = 4
 
+def putHorizontals():
+    for x in range(cols-1):
+        for y in range(2,rows,2):
+            #first col case
+            if x == 0:
+                r = random.randint(1,3)
+                if r ==3:
+                    grid[y][x]=1
+                    grid[y][x+1]=1
+            ## other col case
+
+            elif grid[y][x]!=1 and grid[y][x-1] !=1:
+                r = random.randint(1,3)
+                if r ==3:
+                    grid[y][x]=1
+                    grid[y][x+1]=1
 
 
 def findpath(person):
@@ -49,9 +81,17 @@ def findpath(person):
     
     return x    
 
+pp = pprint.PrettyPrinter(indent=4)
 
+pp.pprint(grid)
+putHorizontals()
+print("*"*20)
+pp.pprint(grid)
+'''
 print("alice",findpath(alice))
 print("bob", findpath(bob))
 print("carol",findpath(carol))
 print("david",findpath(david))
 print("ed",findpath(ed))
+
+'''
