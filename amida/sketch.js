@@ -59,6 +59,7 @@ function putHorizontals(){
 }
 
 function showGrid(){
+  translate(60,0);
   stroke(255)
   strokeWeight(10);
   for(let l=0; l<5*120;l+=120){
