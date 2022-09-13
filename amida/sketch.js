@@ -20,21 +20,17 @@ let grid = [
 
 let rows =17
 let cols =5
-
+let xsz =120
+let ysz = 42;
 
 
 function setup() {
   // put setup code here
-  createCanvas(600,600)
+  createCanvas(600,714)
   background(0)
   putHorizontals();
   console.table(grid)
-}
-
-function draw() {
-  // put drawing code here
-  fill(255)
-  ellipse(mouseX,mouseY,100)
+  showGrid();
 }
 
 
@@ -61,3 +57,23 @@ function putHorizontals(){
         }
     }
 }
+
+function showGrid(){
+  stroke(255)
+  strokeWeight(10);
+  for(let l=0; l<5*120;l+=120){
+    line(l,0,l,height)
+  }
+
+  
+  for(let j =0;j<grid.length;j++){
+    for(let i =0;i<cols-1;i++){
+      if(grid[j][i]==1 && grid[j][i+1]==1){
+        line(i*xsz,j*ysz,i*xsz+xsz,j*ysz)
+      }
+
+    }
+  }
+}
+
+
