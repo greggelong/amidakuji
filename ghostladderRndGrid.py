@@ -87,11 +87,10 @@ pp.pprint(grid)
 putHorizontals()
 print("*"*20)
 pp.pprint(grid)
-'''
+
 print("alice",findpath(alice))
 print("bob", findpath(bob))
 print("carol",findpath(carol))
 print("david",findpath(david))
 print("ed",findpath(ed))
 
-'''
