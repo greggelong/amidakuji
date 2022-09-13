@@ -24,7 +24,7 @@ grid = [
     [0,0,0,0,0],
     [0,0,0,0,0],
     [0,0,0,0,0],
-    
+    [0,0,0,0,0]
     ]
 
 
@@ -37,7 +37,7 @@ ed = 4
 
 def putHorizontals():
     for x in range(cols-1):
-        for y in range(2,rows,2):
+        for y in range(1,rows,2):
             #first col case
             if x == 0:
                 r = random.randint(1,3)
@@ -47,8 +47,8 @@ def putHorizontals():
             ## other col case
 
             elif grid[y][x]!=1 and grid[y][x-1] !=1:
-                r = random.randint(1,3)
-                if r ==3:
+                r = random.randint(1,2)
+                if r ==2:
                     grid[y][x]=1
                     grid[y][x+1]=1
 
