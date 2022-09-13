@@ -22,6 +22,12 @@ let rows =17
 let cols =5
 let xsz =120
 let ysz = 42;
+let alice = 0
+let bob = 1
+let carol =2
+let david =3
+let ed = 4;
+
 
 
 function setup() {
@@ -31,6 +37,8 @@ function setup() {
   putHorizontals();
   console.table(grid)
   showGrid();
+  print(findpath(alice))
+
 }
 
 
@@ -78,3 +86,38 @@ function showGrid(){
 }
 
 
+function findpath(person){
+    let y =0
+    let x =person
+    while (y< grid.length-1){
+        
+        
+        if (grid[y][x]== 1){
+            //check edges
+            if (x == 0){
+                x=x+1
+            }
+            else if(x == 4){
+                x=x-1
+            }
+            //check neighbors
+            //right neighbor
+            else if (grid[y][x+1]== 1){
+                x=x+1
+            }
+            //left neighbor
+            else if (grid[y][x-1]==1){
+                x=x-1
+            }
+        } 
+        //increment
+        y=y+1
+        //print(y,x)
+        fill(255,0,0,30)
+        ellipse(x*xsz,y*ysz,40,40)
+    }
+    
+    
+    return x 
+    
+}
