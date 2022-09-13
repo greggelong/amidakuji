@@ -5,7 +5,7 @@ import pprint
 
 
 cols = 5
-rows = 16
+rows = 17
 # grid is y by x grid[y][x]  #last row blank
 grid = [
     [0,0,0,0,0],
