@@ -75,7 +75,7 @@ def findpath(person):
             
         #increment
         y=y+1
-        print(y,x)
+        #print(y,x)
     
     
     
