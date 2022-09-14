@@ -28,16 +28,55 @@ let carol =2
 let david =3
 let ed = 4;
 
+let clrs;
+
 
 
 function setup() {
   // put setup code here
   createCanvas(600,714)
+  clrs = [color(255,0,0),color(255,255,0),color(255,0,255),color(0,0,255),color(0,255,0)]
   background(0)
   putHorizontals();
   console.table(grid)
   showGrid();
-  print(findpath(alice))
+  frameRate(1)
+   
+
+}
+
+function draw(){
+    background(0);
+    showGrid();
+    let p = frameCount%5
+    findpath(p,clrs[p])
+    if (frameCount%10==0){
+        resetGrid();
+    }
+}
+
+function resetGrid(){
+    grid = [
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0]
+      ]
+
+    putHorizontals();
 
 }
 
@@ -86,35 +125,55 @@ function showGrid(){
 }
 
 
-function findpath(person){
+function findpath(person, clr){
     let y =0
     let x =person
-    while (y< grid.length-1){
+    let newx = person
+    let newy = 0;
+    stroke(clr)
+    while (y< grid.length){
         
         
         if (grid[y][x]== 1){
             //check edges
             if (x == 0){
-                x=x+1
+                newx=newx+1
+                line(x*xsz,y*ysz,newx*xsz,newy*ysz);
+                
             }
             else if(x == 4){
-                x=x-1
+                newx=newx-1
+                line(x*xsz,y*ysz,newx*xsz,newy*ysz);
+            
             }
             //check neighbors
             //right neighbor
             else if (grid[y][x+1]== 1){
-                x=x+1
+                newx=newx+1
+                line(x*xsz,y*ysz,newx*xsz,newy*ysz);
+            
             }
             //left neighbor
             else if (grid[y][x-1]==1){
-                x=x-1
+                newx=newx-1
+                line(x*xsz,y*ysz,newx*xsz,newy*ysz);
+                
             }
+             
         } 
-        //increment
-        y=y+1
-        //print(y,x)
-        fill(255,0,0,30)
-        ellipse(x*xsz,y*ysz,40,40)
+         
+
+        // increment 
+        newy=newy+1
+        // draw the line down
+        line(newx*xsz,y*ysz,newx*xsz,newy*ysz); 
+        
+
+
+       
+        // put newx y vals into x y
+        x=newx;
+        y=newy;
     }
     
     
