@@ -1,6 +1,10 @@
 # amidakuji
 a place to hold some code while I explore amidakuji or ghost ladder in python, and javascript
 
+live javascrip version here:
+
+https://greggelong.github.io/amidakuji/amida
+
 
 came across ghost ladder quite randomly while searching for the music used in the arcade game Frogger
 
