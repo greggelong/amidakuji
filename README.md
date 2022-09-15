@@ -14,12 +14,18 @@ I have used python to make a path following algorithm
 
 I still have used a 2d array to encode the ladder 
 
-I still have to write a function that generates a random ladder according to the rules
+I still have written a function  in python that generates a random ladder according to the rules
 
 that horizontals only span one column 
+
+
+I have also made a version using p5.js to visualize and animate the ladder and the paths
+
 
 some math discussion here
 
 https://www2.edc.org/makingmath/mathprojects/amidakuji/Links/amidakuji_lnk_1.asp
+
+https://www.datagenetics.com/blog/may42014/index.html
 
 
